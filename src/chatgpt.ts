@@ -4,7 +4,7 @@ import { ContactInterface, RoomInterface } from "wechaty/impls";
 import { Configuration, OpenAIApi } from "openai";
 
 // ChatGPT error response configuration
-const chatgptErrorMessage = "🤖️：麦扣的机器人摆烂了，请稍后再试～";
+const chatgptErrorMessage = "🤖️：咕咕咕～";
 
 // ChatGPT model configuration
 // please refer to the OpenAI API doc: https://beta.openai.com/docs/api-reference/introduction
@@ -172,7 +172,7 @@ export class ChatGPTBot {
     // get reply from ChatGPT
     const chatgptReplyMessage = await this.onChatGPT(text);
     // the reply consist of: original text and bot reply
-    const result = `${text}\n ---------- \n ${chatgptReplyMessage}`;
+    const result = `${chatgptReplyMessage}`;
     await this.reply(room, result);
   }
 
